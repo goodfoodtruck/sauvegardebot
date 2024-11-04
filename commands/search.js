@@ -49,6 +49,11 @@ const execute = async (interaction) => {
                     .setFooter({ text: interaction.user.username })
                     .setTimestamp()
                     .setURL(game.url);
+                
+                if (game.screenshots && game.screenshots.length) {
+                    embed.setImage(`https://images.igdb.com/igdb/image/upload/t_screenshot_med/${game.screenshots[0].image_id}.jpg`)
+                }
+                
                 await interaction.reply({ embeds: [embed] });
             } else {
                 await interaction.reply({ content: "Jeu non trouvé.", ephemeral: true });

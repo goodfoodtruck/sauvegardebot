@@ -48,6 +48,7 @@ async function getGame(gameSlug) {
     const body = `fields
                 name,
                 cover.image_id,
+                screenshots.image_id,
                 genres.name,
                 platforms.name,
                 first_release_date,
