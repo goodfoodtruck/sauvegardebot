@@ -30,7 +30,7 @@ const execute = async (interaction) => {
             if (game) {
                 const embed = new EmbedBuilder()
                     .setTitle(`${game.name} (${new Date(game.first_release_date * 1000).getFullYear()})`)
-                    .setDescription(game.summary)
+                    .setDescription(game.summary.length > 160 ? game.summary.slice(0, 157) + "..." : game.summary)
                     .setColor(0x66A0B5)
                     .addFields({
                         name: 'Développeurs',
