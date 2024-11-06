@@ -37,7 +37,7 @@ async function searchByName(name) {
     const body = `fields
         name,
         slug;
-        where name ~ *"${name}"* & rating_count > 0;
+        where name ~ *"${name}"*;
         sort rating_count desc;
     `
     const games = await headedRequest("games", body);
